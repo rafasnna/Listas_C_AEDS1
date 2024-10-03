@@ -8,15 +8,19 @@ Linux : ./exemplo0100
 Windows: exemplo0100
 */
 
+#include<stdio.h>
+#include<stdlib.h>
 
-#include <stdlib.h>
-#include <stdio.h>
+void method_01 ()
+{
 
-int main(){
+//identificar
+printf("%s\n", "method_01");
 
-int Inteiro = 0;
+//encerrar
+printf("\nAperte <enter> para finalizar");
+getchar();
 
-
-
-
+//end method 1
 }
+
