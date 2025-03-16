@@ -1,6 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <io.h>
+#include "io.h"
+
+
+void method_00(void){
+
+
+}
 
 /* 01.) Incluir um método (0311) para:
 - ler uma palavra do teclado;
@@ -10,8 +16,24 @@ Comparar os símbolos e não seus códigos numéricos equivalentes.
 Exemplo: palavra = "PaLaVrA"*/
 void ex0311(){
 
-char=
+int x = 0;
+int tamanho = 0;
+char palavra [STR_SIZE];
 
+    IO_id("EX 01 - Rafael Sampaio.");
+    IO_printf("Digite uma palavra: ");
+    scanf("%s", palavra);
+
+    tamanho = strlen(palavra);
+
+for(x = 0; x < tamanho; x= x + 1 ){
+
+    if (palavra[x] > 'K' && palavra[x] <= 'Z'){
+        IO_printf("%c\n", palavra[x]);
+    }
+
+}
+    IO_pause("Aperte <enter> para finalizar.");
 
 }
 
@@ -23,14 +45,54 @@ Comparar os símbolos e não seus códigos numéricos equivalentes.
 Exemplo: palavra = "PaLaVrA"*/
 void ex0312(){
 
+int contador = 0;
+int x        = 0;
+int tamanho  = 0;
+char palavra [STR_SIZE];
+
+    IO_id("EX 02 - Rafael Sampaio. ");
+    IO_printf("Digite uma palavra: ");
+    scanf("%s", palavra);
+
+    tamanho = strlen(palavra);
+
+for (x = 0; x < tamanho; x = x + 1 ){
+    
+
+    if (palavra[x] >= 'a' && palavra[x] < 'k'){
+        IO_printf("%d. %c\n", contador, palavra[x]);
+        contador++;
+    }
+}
+    IO_pause("Aperte <enter> para finalizar.");
 
 }
+
 /*03.) Incluir um método (0313) para:
 - ler uma palavra do teclado;
 - contar e mostrar as letras minúsculas maiores que 'K', percorrendo do fim para o início da palavra.
 Exemplo: palavra = "PaLaVrA"*/
 void ex0313(){
 
+int  x        = 0;
+int  contador = 0;
+int  tamanho  = 0;
+char palavra  [STR_SIZE];
+
+    IO_id("EX 03 - Rafael Sampaio");
+    IO_printf("Digite uma palavra: ");
+    scanf("%s", palavra);
+
+    tamanho = strlen(palavra) - 1;
+
+for (x = tamanho; x > 0; x-- ){
+
+    if (palavra[x] > 'k' && palavra[x] <= 'z'){
+        IO_printf("%d. %c\n", contador, palavra[x]);
+        contador++;
+    }
+}
+    IO_pause("Aperte <enter> para finalizar.");
 
 }
 
@@ -40,14 +102,71 @@ void ex0313(){
 Exemplo: palavra = "P4LaVr@"*/
 void ex0314(){
 
+int x        = 0;
+int contador = 0;
+int tamanho  = 0;
+char palavra [STR_SIZE];
 
-}
+    IO_id("EX 04 - Rafael Sampaio  ");
+    IO_printf("Digite uma palavra: ");
+    scanf("%s", palavra);
+
+    tamanho = strlen(palavra);
+
+    for (x=0; x < tamanho; x=x+1){
+
+        if (palavra[x] > 'A' && palavra[x] <= 'Z'){
+            IO_printf("%d. %c (letra Maiuscula)\n",contador,palavra[x]);
+            
+        }
+        else if (palavra[x] > 'a' && palavra[x] <= 'z'){
+            IO_printf("%d. %c (letra minuscula)\n",contador,palavra[x]);
+        }
+        else{ 
+            IO_printf("%d. %c (Diferente de letra)\n",contador,palavra[x]);
+        }
+        contador++;
+    }
+        IO_pause("Aperte <enter> para finalizar.");
+        getchar();
+    
+    }
+
+
 /*05.) Incluir um método (0315) para:
 - ler uma cadeia de caracteres do teclado;
 - contar e mostrar todos os dígitos pares, percorrendo do fim para o início da cadeia de caracteres.
 Exemplo: palavra = "P4LaVr@1"*/
 void ex0315(){
 
+    int x        = 0;
+    int contador = 0;
+    int tamanho  = 0;
+    char palavra [STR_SIZE];
+    
+        IO_id("EX 04 - Rafael Sampaio  ");
+        IO_printf("Digite uma palavra: ");
+        scanf("%s", palavra);
+    
+        tamanho = strlen(palavra) -1;
+    
+        for (x= tamanho; x >= 0; x--){
+    
+
+
+            if (contador % 2 == 0){
+                IO_printf("%d.%c\n",contador,palavra[x]);
+                
+            }
+            else{
+                IO_printf("\n");
+            }
+            contador++;
+        }
+            IO_pause("Aperte <enter> para finalizar.");
+            getchar();
+        
+        
 
 }
 
@@ -56,9 +175,39 @@ void ex0315(){
 - contar e mostrar tudo o que não for dígito ímpar e também não for letra.
 Exemplo: palavra = "P4LaVr@O!"*/
 void ex0316(){
+    
+int x        = 0;
+int contador = 0;
+int tamanho  = 0;
+char palavra [STR_SIZE];
+    
+        IO_id("EX 04 - Rafael Sampaio  ");
+        IO_printf("Digite uma palavra: ");
+        scanf("%s", palavra);
+    
+        tamanho = strlen(palavra) -1;
+    
+for (x= tamanho; x >= 0; x++){
+    
 
+
+    if (contador % 2 == 0){
+        IO_printf("%d.%c\n(NI/L)",contador,palavra[x]);
+                
+        }
+        else{
+            IO_printf("\n");
+            }
+            contador++;
+        }
+            IO_pause("Aperte <enter> para finalizar.");
+            getchar();
+        
+        
 
 }
+
+
 
 /*07.) Incluir um método (0317) para:
 - ler dois valores inteiros (a,b), limites para definirem um intervalo [a:b];
@@ -118,5 +267,49 @@ void ex0320(){
 
 int main (){
 
+    int opcao = 0;
+
+    do
+    {
+        IO_id("Atividades - Rafael Sampaio");
+
+        IO_println("Opcoes:");
+        IO_println("0 - Terminar");
+        IO_println("1 - Atividade  *01");
+        IO_println("2 - Atividade  *02");
+        IO_println("3 - Atividade  *03");
+        IO_println("4 - Atividade  *04");
+        IO_println("5 - Atividade  *05");
+        IO_println("6 - Atividade  *06");
+        IO_println("7 - Atividade  *07");
+        IO_println("8 - Atividade  *08");
+        IO_println("9 - Atividade  *09");
+        IO_println("10 - Atividade  *10");
+
+        opcao = IO_readint("Escolha um exemplo: ");
+
+        //testar valor 
+        switch(opcao)
+        {
+            case 0 : method_00(); break;
+            case 1 : ex0311(); break;
+            case 2 : ex0312();break;
+            case 3 : ex0313(); break;
+            case 4 : ex0314();break;
+            case 5 : ex0315(); break;
+            case 6 : ex0316();break;
+            case 7 : ex0317(); break;
+            case 8 : ex0318();break;
+            case 9 : ex0319(); break;
+            case 10 : ex0320(); break;
+            default:
+                IO_pause ( IO_concat ( "Valor diferente das opcoes (",
+                IO_concat ( IO_toString_d ( opcao ), ")" ) ) );
+        }
+    } 
+    while( opcao != 0);
+    IO_pause ( "Apertar ENTER para terminar" );
+return ( 0 );
 
 }
+
