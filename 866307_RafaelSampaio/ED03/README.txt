@@ -1,0 +1,1 @@
+Ola Theldo, coloquei imagens nas minhas saidas dos exemplos e estao no .pdf !!

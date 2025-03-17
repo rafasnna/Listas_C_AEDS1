@@ -14,6 +14,7 @@ void method_00(void){
 DICA: Definir um teste para determinar se um caractere é letra maiúscula.
 Comparar os símbolos e não seus códigos numéricos equivalentes.
 Exemplo: palavra = "PaLaVrA"*/
+
 void ex0311(){
 
 int x = 0;
@@ -43,6 +44,7 @@ for(x = 0; x < tamanho; x= x + 1 ){
 DICA: Definir um teste para determinar se um caractere é letra minúscula.
 Comparar os símbolos e não seus códigos numéricos equivalentes.
 Exemplo: palavra = "PaLaVrA"*/
+
 void ex0312(){
 
 int contador = 0;
@@ -72,6 +74,7 @@ for (x = 0; x < tamanho; x = x + 1 ){
 - ler uma palavra do teclado;
 - contar e mostrar as letras minúsculas maiores que 'K', percorrendo do fim para o início da palavra.
 Exemplo: palavra = "PaLaVrA"*/
+
 void ex0313(){
 
 int  x        = 0;
@@ -93,13 +96,14 @@ for (x = tamanho; x > 0; x-- ){
     }
 }
     IO_pause("Aperte <enter> para finalizar.");
-
+    getchar();
 }
 
 /*04.) Incluir um método (0314) para:
 - ler uma cadeia de caracteres do teclado;
 - contar e mostrar todos símbolos que forem letras, ou maiúsculas ou minúsculas.
 Exemplo: palavra = "P4LaVr@"*/
+
 void ex0314(){
 
 int x        = 0;
@@ -132,11 +136,11 @@ char palavra [STR_SIZE];
     
     }
 
-
 /*05.) Incluir um método (0315) para:
 - ler uma cadeia de caracteres do teclado;
 - contar e mostrar todos os dígitos pares, percorrendo do fim para o início da cadeia de caracteres.
 Exemplo: palavra = "P4LaVr@1"*/
+
 void ex0315(){
 
     int x        = 0;
@@ -144,7 +148,7 @@ void ex0315(){
     int tamanho  = 0;
     char palavra [STR_SIZE];
     
-        IO_id("EX 04 - Rafael Sampaio  ");
+        IO_id("EX 05 - Rafael Sampaio  ");
         IO_printf("Digite uma palavra: ");
         scanf("%s", palavra);
     
@@ -174,40 +178,36 @@ void ex0315(){
 - ler uma cadeia de caracteres do teclado;
 - contar e mostrar tudo o que não for dígito ímpar e também não for letra.
 Exemplo: palavra = "P4LaVr@O!"*/
+
 void ex0316(){
-    
-int x        = 0;
+
+int x = 0;
 int contador = 0;
-int tamanho  = 0;
-char palavra [STR_SIZE];
-    
-        IO_id("EX 04 - Rafael Sampaio  ");
-        IO_printf("Digite uma palavra: ");
-        scanf("%s", palavra);
-    
-        tamanho = strlen(palavra) -1;
-    
-for (x= tamanho; x >= 0; x++){
-    
+int tamanho = 0;
+char palavra[STR_SIZE];
 
+    IO_id("EX 06 - Rafael Sampaio");
+    
+    IO_printf("Entre com uma palavra: ");
+    scanf("%s", palavra);
 
-    if (contador % 2 == 0){
-        IO_printf("%d.%c\n(NI/L)",contador,palavra[x]);
-                
-        }
-        else{
-            IO_printf("\n");
-            }
-            contador++;
-        }
-            IO_pause("Aperte <enter> para finalizar.");
-            getchar();
+    tamanho = strlen(palavra);
+
+    for (x = 0; x < tamanho; x++) {  
+        char c = palavra[x];
+
         
-        
+     if (!((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')) && !(c >= '1' && c <= '9' && (c - '0') % 2 != 0)){
+        IO_printf("%d. %c\n", contador, c);
+        }
+
+        contador++;
+    }
+
+    IO_pause("Pressione <enter> para finalizar.");
+    getchar();
 
 }
-
-
 
 /*07.) Incluir um método (0317) para:
 - ler dois valores inteiros (a,b), limites para definirem um intervalo [a:b];
@@ -216,8 +216,41 @@ for (x= tamanho; x >= 0; x++){
 - contar e mostrar quantos dentre esses valores lidos (x)
 os que forem múltiplos de 3, e pertençam ao intervalo [a:b].
 Exemplo: [ 20: 50 ], e n = 7, com { 10, 20, 30, 42, 54, 60, 84 }*/
+
 void ex0317(){
 
+int a = 0;
+int b = 0;
+int n = 0;
+int x = 0;
+int contador = 0; 
+
+    IO_id("EX07 - Rafael Sampaio");
+
+    IO_printf("Entre com um inteiro para intervalo inferior:");
+    scanf("%d",&a);
+
+    IO_printf("Entre com um inteiro para intervalo superior:");
+    scanf("%d",&b);
+
+    IO_printf("Quantas vezes iremos testar?");
+    scanf("%d",&n);
+
+    for(int y=0;y<n;y=y+1)
+    {
+        scanf("%d",&x);
+
+        if(x % 3 ==0  && (x>=a && x<=b))
+        {
+
+            contador++;
+        }
+        
+    }
+    IO_printf("Quantidade de valores multiplos de 3 e dentro do intervalo [%d:%d] = %d",a, b, contador);
+
+    IO_pause ( "Pressione <enter> para continuar" );
+    getchar();
 
 }
 
@@ -229,7 +262,39 @@ void ex0317(){
 os que forem múltiplos de 4, que não forem também múltiplos de 3,
 e pertençam ao intervalo [a:b].
 Exemplo: [ 15: 55 ], e n = 7, com { 10, 20, 30, 48, 52, 60, 84 }*/
+
 void ex0318(){
+
+int a = 0;
+int b = 0;
+int n = 0;
+int x = 0;
+int contador = 0; 
+    
+    IO_id("EX08 - Rafael Sampaio");
+
+    IO_printf("Entre com um inteiro para intervalo inferior:");
+    scanf("%d",&a);
+
+    IO_printf("Entre com um inteiro para intervalo superior:");
+    scanf("%d",&b);
+
+    IO_printf("Quantas vezes iremos testar?");
+    scanf("%d",&n);
+
+for (int y = 0; y < n; y++) {
+
+        IO_printf("Digite um número: ");
+        scanf("%d", &x);
+
+        if (x % 4 == 0 && x % 3 != 0 && x >= a && x <= b) {
+            contador++;
+        }
+    }
+    IO_printf("Quantidade de valores multiplos de 4 , nao multiplos de 3, e dentro do intervalo [%d:%d] = %s",a,b,contador);
+
+    IO_pause ( "Pressione <enter> para continuar" );
+    getchar();
 
 
 }
@@ -244,9 +309,52 @@ cujas partes inteiras forem pares e menores que 5.
 DICA: Usar conformação de tipo (type casting) para isolar a parte inteira (int),
 antes de testar se é par (ver 0110).
 Exemplo: ( 1.5: 8.1 ), e n = 7, com { 1.0, 2.4, 3.3, 4.1, 5.5, 6.3, 8.6 }*/
+
 void ex0319(){
 
+double r = 0.0;
+double f = 0.0;
+int n = 0;
+double x = 0;
+int contador = 0;
 
+    IO_id("EX9 - Rafael Sampaio");
+
+    
+    IO_printf("Entre com um valor real para o intervalo inferior: ");
+    scanf("%lf", &r);
+
+    IO_printf("Entre com um valor real para o intervalo superior: ");
+    scanf("%lf", &f);
+
+    
+    if (r >= f) {
+        IO_printf("Erro: O valor inferior deve ser menor que o superior.\n");
+        return;
+    }
+
+    IO_printf("Quantos valores serão testados? ");
+    scanf("%d", &n);
+
+   
+    for (int y = 0; y < n; y++) {   
+        IO_printf("Digite um valor real: ");
+        scanf("%lf", &x);
+
+        int parte_inteira = (int)x; 
+
+        
+        if (parte_inteira < 5 && parte_inteira % 2 == 0 && (x > r && x < f)) {
+            IO_printf("%lf atende às condições.\n", x);
+            contador++;
+        }
+    }
+
+    
+    IO_printf("Quantidade de valores dentro do intervalo e com parte inteira par menor que 5: %d\n", contador);
+
+    IO_pause ( "Pressione <enter> para continuar" );
+    getchar();
 }
 
 /*10.) Incluir um método (0320) para:
@@ -259,11 +367,54 @@ que tenham suas partes fracionárias dentro do intervalo ]a:b[.
 DICA: Usar conformação de tipo (type casting) para isolar a parte inteira (int),
 e obter a parte fracionária mediante a subtração da parte inteira, antes de testar.
 Exemplo: ( 0.25: 0.50 ), e n = 7, com { 1.0, 2.8, 3.3, 4.1, 5.5, 6.9, 8.4 }*/
+
 void ex0320(){
 
+double a     = 0.0; 
+double b     = 0.0;
+double x     = 0.0; 
+double fp    = 0.0;
+int n        = 0;
+int contador = 0;
 
+    IO_id("EX10 - Rafael Sampaio");
+
+
+    do {
+        IO_printf("Entre com um valor real para o intervalo inferior:");
+        scanf("%lf", &a);
+        IO_printf("Entre com um valor real para o intervalo superior:");
+        scanf("%lf", &b);
+
+        if (!(0 < a && a < 1 && 0 < b && b < 1 && a < b)) {
+            IO_printf("Os valores devem estar no intervalo (0,1) e 'a' deve ser menor que 'b'.\n");
+        }
+    } while (!(0 < a && a < 1 && 0 < b && b < 1 && a < b));
+
+    IO_printf("Quantas vezes vai ser testado?");
+    scanf("%d", &n);
+
+    
+    for (int y = 0; y < n; y++) {
+        IO_printf("Digite o %dº valor real:", y + 1);
+        scanf("%lf", &x);
+
+        
+        fp = x - (int)x;
+
+        
+        if (fp > a && fp < b) {
+            IO_printf("%lf está dentro do intervalo.\n", x);
+            contador++; 
+        }
+    }
+
+    
+    IO_printf("Quantidade de valores com parte fracionária dentro do intervalo: %d\n", contador);
+
+    IO_pause("Apertar ENTER para continuar");
+    getchar();
 }
-
 
 int main (){
 
@@ -288,7 +439,7 @@ int main (){
 
         opcao = IO_readint("Escolha um exemplo: ");
 
-        //testar valor 
+        
         switch(opcao)
         {
             case 0 : method_00(); break;
@@ -308,7 +459,8 @@ int main (){
         }
     } 
     while( opcao != 0);
-    IO_pause ( "Apertar ENTER para terminar" );
+    IO_pause ( "Pressione <enter> para FINALIZAR" );
+    getchar();
 return ( 0 );
 
 }
