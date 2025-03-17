@@ -35,6 +35,7 @@ for(x = 0; x < tamanho; x= x + 1 ){
 
 }
     IO_pause("Aperte <enter> para finalizar.");
+    getchar();
 
 }
 
@@ -197,7 +198,7 @@ char palavra[STR_SIZE];
         char c = palavra[x];
 
         
-     if (!((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')) && !(c >= '1' && c <= '9' && (c - '0') % 2 != 0)){
+        if( contador%2==0 && !(palavra[x] >= 'A' && palavra[x] <= 'Z') && !( palavra[x] >= 'a' && palavra[x] <= 'z') ){
         IO_printf("%d. %c\n", contador, c);
         }
 
