@@ -27,6 +27,8 @@ void at01 (){
 
 int n = 0;
 
+     IO_id("ATV= 1");
+
     n = IO_readint("Entre com um inteiro: ");
     mult3(n);
     IO_pause("Pressione <enter> para continuar");
@@ -58,6 +60,9 @@ void mult3e5 (int n){
 void at02 (){
 
 int n = 0;
+
+     IO_id("ATV= 2");
+
     n = IO_readint("Entre com um inteiro: ");
     mult3e5(n);
 
@@ -91,6 +96,9 @@ int potencia = 1;
 void at03(){
 
 int n = 0;
+
+     IO_id("ATV= 3");
+
     n = IO_readint("Entre com um inteiro: ");
     pot4(n);
 
@@ -123,6 +131,9 @@ int denom = 3; //denominador
 void at04(){
 
 int n = 0;
+
+    IO_id("ATV= 4");
+
     n = IO_readint("Entre com um valor inteiro desejado: ");
     invmult3(n);
 
@@ -163,6 +174,8 @@ void at05(){
 double x = 0.0;
 int    n = 0;
 
+    IO_id("ATV= 5");
+
        x = IO_readdouble("Entre com o valor real: ");// vezes que voce quer apareça
        n = IO_readint("Entre com a quantidade de termos: "); //e sua potencia
        seq(x,n);
@@ -202,6 +215,8 @@ void at06 (){
 
 int n = 0;
 
+    IO_id("ATV= 6");
+
     n = IO_readint("Entre com a quantidade de valores: ");
         sm3nm4(n);
 
@@ -217,6 +232,41 @@ mostrar os resultados em outro método.
  
 Exemplo:  n = 5 => 1/4 + 1/8 + 1/12 + 1/16 + 1/24 */
 
+void sm4nm5 (int n){
+    
+    int contador = 0;
+    int numero   = 0;
+    int soma     = 0;
+    int controle = 1;
+    
+        IO_printf("Valores: ");
+    
+        while (contador < n)
+        {
+            numero= 4*controle;
+            if(numero % 4 == 0 && numero % 5 !=0){
+                IO_printf(" 1/%d ", numero);
+                soma += numero;
+                contador++;
+            }
+            controle++;
+            
+        }
+        IO_printf(" = %d\n", soma);
+    }
+    
+    void at07 (){
+    
+    int n = 0;
+
+        IO_id("ATV= 7");
+
+        n = IO_readint("Entre com a quantidade de valores: ");
+            sm4nm5(n);
+    
+        IO_printf("Pressione <enter> para continuar");
+    } 
+
 
 
 
@@ -227,6 +277,38 @@ Testar essa função para quantidades diferentes de valores e
 mostrar os resultados em outro método. 
  
 Exemplo:  n = 5 => 5 + 6 + 8 + 11 + 15 */
+
+void sn (int x)
+{
+
+ 
+int y=0;
+int valor=5;
+int soma=0;
+int contador=0;
+
+int adicional=1;
+
+    while(contador<x)
+    {
+        valor    += valor;
+        IO_printf("%d\n",valor);
+
+        soma     += valor;
+        contador +=1  ;
+        y        += adicional;
+    }
+    IO_printf("soma: %d\n",soma);
+}
+void at08 (void)
+{
+    int n=0;
+    IO_id("ATV= 8 ");
+    n = IO_readint("Entre com uma quantidade: ");
+    sn(n);
+   
+    IO_pause("Pressione <enter> para continuar");
+}
 
 
 
@@ -240,6 +322,33 @@ e mostrar os resultados em outro método.
  
 Exemplo:  n = 5 => 25 + 36 + 49 + 64 + 81*/ 
 
+void quadrados(int x) {
+    
+int y = 0;
+int valor = 25;
+int contador = 0;
+int soma = 0;
+
+    while (contador < x) {
+        valor = pow(5 + y, 2); 
+        IO_printf("%d\n", valor);
+
+        soma     += valor; 
+        contador += 1;
+        y += 1; 
+    }
+    IO_printf("soma = %d\n", soma);
+}
+
+void at09(void) {
+    int n = 0;
+    IO_id("ATV= 9");
+    n = IO_readint("entre com uma quantidade: ");
+
+    quadrados(n);
+
+    IO_pause("Pressione <enter> para continuar");
+}
 
 
 
@@ -251,17 +360,41 @@ e mostrar os resultados em outro método.
  
 Exemplo:  n = 5 => 1/13 + 1/9 + 1/6 + 1/4 + 1/3 */
 
+void si (int n) {
+    int contador = 0;
+    int numero = 3;
+    double soma = 0.0;
 
+    IO_printf("valores: ");
 
+    while (contador < n) {
+        if (contador > 0) {
+            IO_printf(" + ");
+        }
+        IO_printf("1/%d", numero);
+        soma += 1.0 / numero;
+        contador++;
+        numero += (contador + 1); // proxima  soma
+    }
 
+    IO_printf(" = %.6f\n", soma);
+}
 
+void at10() {
+    int n = 0;
 
+    IO_id("ATV= 10");
 
+    n = IO_readint("entre com a quantidade de valores: ");
+    somaInversos(n);
+
+    IO_pause("Pressione <enter> para continuar");
+}
 
 
  
  
-//Tarefas extras 
+//Tarefas extras (pretendo ainda fazer extras!)
  
  
 /* E1.) Incluir função e método (Exemplo05E1) para  
@@ -300,10 +433,10 @@ int opcao = 0;
            case  4: at04 ( ); break;
            case  5: at05 ( ); break;
            case  6: at06 ( ); break;
-           //case  7: at07 ( ); break;
-           //case  8: at08 ( ); break;
-           //case  9: at09 ( ); break;
-           //case 10: at10 ( ); break;
+           case  7: at07 ( ); break;
+           case  8: at08 ( ); break;
+           case  9: at09 ( ); break;
+           case 10: at10 ( ); break;
            default: printf ( "\n%s\n",
                            "ERRO: Desisto\n\n" );
             break;
