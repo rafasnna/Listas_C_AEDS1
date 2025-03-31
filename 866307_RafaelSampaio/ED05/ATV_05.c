@@ -320,7 +320,8 @@ calcular a soma dos quadrados dos números naturais começando no valor 25.
 Testar essa função para quantidades diferentes de valores e 
 e mostrar os resultados em outro método. 
  
-Exemplo:  n = 5 => 25 + 36 + 49 + 64 + 81*/ 
+Exemplo:  n = 5 => 25 + 36 + 49 + 64 + 81*/
+
 
 void quadrados(int x) {
     
@@ -386,7 +387,7 @@ void at10() {
     IO_id("ATV= 10");
 
     n = IO_readint("entre com a quantidade de valores: ");
-    somaInversos(n);
+    si(n);
 
     IO_pause("Pressione <enter> para continuar");
 }
@@ -408,7 +409,6 @@ ler uma quantidade inteira do teclado (n) e,
 mediante o uso da função, calcular e mostrar o resultado em outro método de 
  
 f ( n ) = (1+2/3!) * (1+4/5!) * (1+6/7!) * ... */
-
 
 
 //MAIN
@@ -437,6 +437,7 @@ int opcao = 0;
            case  8: at08 ( ); break;
            case  9: at09 ( ); break;
            case 10: at10 ( ); break;
+           case 11: aula ( ); break;
            default: printf ( "\n%s\n",
                            "ERRO: Desisto\n\n" );
             break;
