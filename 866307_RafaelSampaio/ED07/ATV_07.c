@@ -4,6 +4,8 @@
 #include "io.h"
 #include <time.h>
 
+#define STR_SIZE 100 // Definir
+
 /** 01.) Gravar múltiplos de 4 em ordem crescente */
 void atv0711() {
     FILE *arquivo = fopen("RESULTADO0711.TXT", "wt");
@@ -18,7 +20,7 @@ void atv0711() {
     }
 
     fclose(arquivo);
-    IO_pause("Pressione ENTER para continuar.");
+    IO_pause("Pressione <enter> para continuar.");
 }
 
 /** 02.) Gravar múltiplos de 15 em ordem decrescente */
@@ -37,7 +39,7 @@ void atv0712() {
     }
 
     fclose(arquivo);
-    IO_pause("Pressione ENTER para continuar.");
+    IO_pause("Pressione <enter> para continuar.");
 }
 
 /** 03.) Gravar valores da sequência 1, 3, 9, 27, ... */
@@ -58,7 +60,7 @@ void atv0713() {
     }
 
     fclose(arquivo);
-    IO_pause("Pressione ENTER para continuar.");
+    IO_pause("Pressione <enter> para continuar.");
 }
 
 /** 04.) Gravar valores decrescentes da sequência 1/81, 1/27, ... */
@@ -83,7 +85,7 @@ void atv0714() {
 
     fprintf(arquivo, "1\n");
     fclose(arquivo);
-    IO_pause("Pressione ENTER para continuar.");
+    IO_pause("Pressione <enter> para continuar.");
 }
 
 /** 05.) Gravar valores reais da sequência 1, 1/x³, 1/x⁵, ... */
@@ -105,7 +107,7 @@ void atv0715() {
     }
 
     fclose(arquivo);
-    IO_pause("Pressione ENTER para continuar.");
+    IO_pause("Pressione <enter> para continuar.");
 }
 
 /** 06.) Somar valores do arquivo gerado na atividade anterior */
@@ -134,7 +136,7 @@ void atv0716() {
     IO_id("ATV0716");
     quantidade = IO_readint("Digite a quantidade de valores: ");
     somarValores("RESULTADO0715.TXT", quantidade);
-    IO_pause("Pressione ENTER para continuar.");
+    IO_pause("Pressione <enter> para continuar.");
 }
 
 /** 07.) Calcular soma dos inversos das potências */
@@ -159,7 +161,7 @@ void atv0717() {
     IO_id("ATV017");
     quantidade = IO_readint("Digite a quantidade de valores: ");
     somaInversos("RESULTADO07.TXT", quantidade);
-    IO_pause("Pressione ENTER para continuar.");
+    IO_pause("Pressione <enter> para continuar.");
 }
 
 /** 08.) Gravar termos pares da sequência de Fibonacci */
@@ -193,7 +195,7 @@ void atv0718() {
     }
 
     fclose(arquivo);
-    IO_pause("Pressione ENTER para continuar.");
+    IO_pause("Pressione <enter> para continuar.");
 }
 
 /** 09.) Contar caracteres minúsculos em uma string */
@@ -225,7 +227,7 @@ void atv0719() {
 
     resultado = contarMinusculas("RESULTADO09.TXT", palavra);
     printf("Total de caracteres minúsculos: %d\n", resultado);
-    IO_pause("Pressione ENTER para continuar.");
+    IO_pause("Pressione <enter> para continuar.");
 }
 
 /** Main */
