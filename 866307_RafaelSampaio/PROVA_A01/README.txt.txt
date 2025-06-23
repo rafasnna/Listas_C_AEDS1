@@ -1,0 +1,1 @@
+Oie Theldo, refazendo a prova por programa a gente ve como a gente teve erro besta tipo muuuito besta (eu) kkkk obrigado por mostrar
